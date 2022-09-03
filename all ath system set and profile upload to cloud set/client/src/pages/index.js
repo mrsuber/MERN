@@ -1,0 +1,8 @@
+export {default as LoginScreen} from './login/Login'
+export {default as RegisterScreen} from './register/Register'
+export {default as DashboardScreen} from './dashoard/Dashboard'
+export {default as Home} from './home/Home'
+export {default as ProfileScreen} from './profile/Profile'
+export {default as VerifyAccountScreen} from './verify/Verify'
+export {default as ResetPassword} from './resetpassword/ResetPassword'
+export {default as ForgotPassword} from './forgotpassword/ForgotPassword'
