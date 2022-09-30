@@ -1,0 +1,23 @@
+.banner__container img{
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain; */
+}
+
+.banner__container{
+  width: 100%;
+  -webkit-mask-image:linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 2),
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0),
+    )
+}
+
+.bannerItem1__imagecontainer img,.bannerItem2__imagecontainer img,.bannerItem3__imagecontainer img{
+  height:30vh ;
+  object-fit: cover;
+}
