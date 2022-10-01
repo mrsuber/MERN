@@ -18,6 +18,6 @@
 }
 
 .bannerItem1__imagecontainer img,.bannerItem2__imagecontainer img,.bannerItem3__imagecontainer img{
-  height:30vh ;
+  height:40vh ;
   object-fit: cover;
 }

@@ -5,6 +5,7 @@ const Category = require('../models/categoryModel')
 
 const productCtrl = {
   createProduct: async(req, res,next) => {
+      
       const {name, description,category,image,price} = req.body
       if(!name ||!description || !category || !image || !price){
         res.status(400).json({msg:"Invalid Request, missing parameters"})
@@ -12,11 +13,18 @@ const productCtrl = {
       }
       try {
         const findCat = await Category.findOne({name:category})
+        const fineProduct = await Products.findOne({name})
 
         if(!findCat){
           res.status(400).json({msg:"Category does not exist"})
           return next(new ErrorResponse("Category does not exist", 400))
         }
+
+        if(fineProduct){
+          res.status(400).json({msg:"product already exist"})
+          return next(new ErrorResponse("product already exist", 400))
+        }
+
 
         const newProduct = await new Products({
           name,
@@ -37,11 +45,18 @@ const productCtrl = {
       }
   },
   getAllProducts: async(req,res) =>{
+    const skip = parseInt(req.body.skip)
+      const filters = req.body.filters
+      
     try {
-      const getProducts = await Products.find().populate("_category").exec()
+      const getProducts = await Products.find(filters)
+      .populate("_category")
+      .skip(skip)
+      .limit(8)
+      .exec()
       res.status(200).json({
         status:true,
-       data:getProducts,
+       products:getProducts,
        msg:'get products success'
       })
 

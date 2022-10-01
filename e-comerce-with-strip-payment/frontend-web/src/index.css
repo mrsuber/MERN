@@ -1,11 +1,11 @@
-/* google fonts */
+/* google fonts
 
 @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
 
 /* reset default style */
 
-* {
+/* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,7 +13,7 @@
 
 /* base style */
 
-body {
+/* body {
   background: #fcfcfc;
   font-family: "Istok Web", sans-serif;
 }
@@ -41,4 +41,4 @@ h2 {
 
 section {
   padding: 60px 0px;
-}
+} */ 

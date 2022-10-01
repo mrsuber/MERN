@@ -1,0 +1,69 @@
+.card__container_imageContainer_image{
+  width: 300px;
+  padding: 5px;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.card__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  margin: 10px 10px;
+  width: 300px;
+height: 400px;
+transition: 0.4s ease-in-out;
+
+}
+
+.card__container:hover{
+  box-shadow: -1px 7px 5px 6px rgba(0,0,0,0.2);
+-webkit-box-shadow: -1px 7px 5px 6px rgba(0,0,0,0.2);
+-moz-box-shadow: -1px 7px 5px 6px rgba(0,0,0,0.2);
+}
+
+.card__container_textContainer {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.card__container_textContainer h1{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card__container_textContainer h2{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card__container_textContainer h3{
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(41, 203, 41);
+}
+.card__icon_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.card__icon1{
+  border: 1px #ddd solid;
+  background-color: #fff;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  margin: 0 2px;
+  transition: .4s ease;
+  cursor: pointer;
+}
+.card__icon1:hover{
+background-color: rgb(134, 131, 131);
+color: #fff;
+}
