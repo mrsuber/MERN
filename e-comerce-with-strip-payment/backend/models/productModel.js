@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema(
+  
   {
     name: {
       type: String,
@@ -12,7 +13,7 @@ const productSchema = new mongoose.Schema(
     },
     _category:{
       type: mongoose.Types.ObjectId,
-      ref:'category'
+      ref:'categories'
     },
     image:{
       type:String

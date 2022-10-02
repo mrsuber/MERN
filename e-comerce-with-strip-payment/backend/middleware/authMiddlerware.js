@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 exports.isResetTokenValid = async (req, res, next) => {
+  console.log("i see you")
   try {
     const { token, id } = req.query;
 
@@ -42,9 +43,9 @@ exports.isResetTokenValid = async (req, res, next) => {
 };
 
 exports.auth = async (req, res, next) => {
+ 
   try {
     const token = req.header("Authorization");
-
     if (!token) {
       res.status(400).json({ msg: "Invalid Authentication" });
       return next(new ErrorResponse("Invalid Authentication", 400));

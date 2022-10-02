@@ -3,7 +3,7 @@ import './card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEye,faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
-const Card = ({item,handleShowProductDetails}) => {
+const Card = ({item,handleShowProductDetails,handleAddToCart}) => {
   return (
     <div className='card__container'>
       <div className='card__container_imageContainer'  onClick={()=>handleShowProductDetails(item)}>
@@ -16,7 +16,7 @@ const Card = ({item,handleShowProductDetails}) => {
       </div>
       <div className='card__icon_container'>
         <div className='card__icon1' onClick={()=>handleShowProductDetails(item)}><FontAwesomeIcon icon={faEye} /></div>
-        <div className='card__icon1'><FontAwesomeIcon icon={faShoppingCart} /></div>
+        <div className='card__icon1' onClick={()=>handleAddToCart(item)}><FontAwesomeIcon icon={faShoppingCart} /></div>
       </div>
     </div>
   )

@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use('/api', require('./backend/routes/authRouter'));
 app.use('/api', require('./backend/routes/categoryRouter'));
 app.use('/api', require('./backend/routes/productRouter'));
+app.use('/api', require('./backend/routes/cartRoutes'));
 
 
 //on production
