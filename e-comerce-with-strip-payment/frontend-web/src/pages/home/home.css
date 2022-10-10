@@ -1,0 +1,30 @@
+.home__container{
+  position: relative;
+width: 100%;
+
+
+}
+.Home__mainPage2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-load-more button{
+  cursor: pointer;
+  background: #098bb3;
+  padding: 5px 10px;
+  border: none;
+  margin:  10px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.cardsection{
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+}

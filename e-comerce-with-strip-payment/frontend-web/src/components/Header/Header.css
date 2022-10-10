@@ -1,0 +1,145 @@
+.Header__container{
+  width: 100%;
+  height: 60px;
+  background-color: #51434B42;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.Header__logo{
+  cursor: pointer;
+  height: 60px;
+}
+.Header__logo img{
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+  object-fit: contain;
+}
+
+.Header__inner{
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+
+}
+
+.Header__searchbar{
+height: 35px;
+flex:1;
+display: flex;
+align-items: center;
+margin: 0px 15px;
+}
+
+.Header__searchbar input{
+  flex:1;
+  border:none;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 0px 0px 5px;
+}
+.Header__searchbar input[placeholder]{
+  padding-left: 20px;
+}
+.Header__searchIcon img{
+width: 22px;
+}
+.Header__searchIcon{
+  background-color: #fed;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0px 5px 5px 0px;
+
+}
+
+.Header__navButton{
+  color: #000;
+  padding: 5px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.Header__navButton p{
+  margin: 0;
+}
+
+.Header__navButton p:nth-child(1){
+  font-size: 12px;
+}
+.Header__navButton p:nth-child(2){
+  font-size: 14px;
+  font-weight: 600;
+}
+.Header__right-container{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  padding: 5px 15px;
+}
+.Header__basketButton{
+  display: flex;
+  align-items: center;
+  height: 90%;
+  cursor: pointer;
+}
+.Header__basketButton p{
+  color: #000;
+  font-weight: 500;
+}
+.Header__basketButton img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+   }
+
+   .Header__searchbar-mobile{
+     height: 100%;
+     width: 90%;
+     display: flex !important;
+     align-items: center;
+     padding: 10px;
+     /* display: none */
+   }
+   .Header__searchbar-mobile input{
+     flex:1;
+     border:none;
+     width: 100%;
+     height: 100%;
+     border-radius: 5px 0px 0px 5px;
+   }
+   .Header__searchbar-mobile input[placeholder]{
+     padding-left: 20px;
+   }
+   @media only screen and (min-width: 767px){
+          .Header__searchbar-mobile{
+             display: none !important;
+           }
+      }
+   @media only screen and (max-width:767px){
+     .Header__searchbar{
+       display: none;
+     }
+
+     .Header__inner{
+       justify-content: space-between;
+     }
+     .Header__container{
+       height: 120px;
+       flex-direction: column;
+     }
+     .Header__searchbar-mobile{
+       display: block;
+     }
+   }
