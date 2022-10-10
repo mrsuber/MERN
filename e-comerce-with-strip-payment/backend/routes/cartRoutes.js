@@ -49,7 +49,7 @@ router.post("/addToCart", auth, async (req, res)=>{
     ).populate(populate)
     .exec()
     .then((data, error)=>{
-      if(error)return res.json({status:false, msg:error})
+      if(error)return res.status(400).json({status:false, msg:error})
       if(data){
         return res.status(200).json({status:true, msg:"Add Item to cart successfully!",data})
       }else{
@@ -68,7 +68,7 @@ router.post("/addToCart", auth, async (req, res)=>{
         ).populate(populate)
         .exec()
         .then((data, error) =>{
-          if(error)return res.json({status:false, msg:error})
+          if(error)return res.status(400).json({status:false, msg:error})
           return res.status(200).json({status:true, msg:"Add item to cart successfully!",data})
         })
       }
@@ -80,17 +80,51 @@ router.post("/addToCart", auth, async (req, res)=>{
     cartDetails
   })
   newCart.save((error, data)=>{
-    if(error)return res.json({status:false, msg:error})
+    if(error)return res.status(400).json({status:false, msg:error})
     return res.status(200).json({status:true, msg:'Add item to cart successfully!!!', data})
   })
 }
+})
+
+router.put("/updateCartItem", auth, async(req,res)=>{
+  const _productId = req.body._productId
+  const quantity = req.body.quantity;
+  const product = await Product.findById(_productId);
+  Cart.findOneAndUpdate({
+    _customerId: req.user._id,
+    "cartDetails._product":_productId,
+  },{
+    $set:{
+      "cartDetails.$.quantity":quantity,
+      "cartDetails.$amount":quantity * product.price
+    }
+  },{new: true}).populate(populate).exec((error, data)=>{
+    if(error)return res.status(400).json({status:false, msg:error})
+    return res.status(200).json({status:true, msg:'Item in cart has been updated successfully!!!', data})
+  })
+})
+
+router.put("/removeCartItem/:id", auth, async(req,res)=>{
+  const _productId = req.params.id
+ 
+  Cart.findOneAndUpdate({
+    _customerId: req.user._id,
+   
+  },{
+    $pull:{
+      cartDetails: {_product:_productId}
+    }
+  },{new: true}).populate(populate).exec((error, data)=>{
+    if(error)return res.status(400).json({status:false, msg:error})
+    return res.status(200).json({status:true, msg:'Item in cart has been removed successfully!!!', data})
+  })
 })
 
 router.get("/cart", auth, async(req,res)=>{
   await Cart.findOne({_customerId: req.user._id})
      .populate(populate)
      .exec((error, data)=>{
-      if(error)return res.json({status:false, msg:error})
+      if(error)return res.status(400).json({status:false, msg:error})
       return res.status(200).json({status:true, msg:'Get customer cart successfully!', data})
      })
    

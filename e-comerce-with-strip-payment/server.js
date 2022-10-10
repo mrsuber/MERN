@@ -20,7 +20,7 @@ app.use('/api', require('./backend/routes/authRouter'));
 app.use('/api', require('./backend/routes/categoryRouter'));
 app.use('/api', require('./backend/routes/productRouter'));
 app.use('/api', require('./backend/routes/cartRoutes'));
-
+app.use('/api', require('./backend/routes/orderRouter'));
 
 //on production
 if (process.env.NODE_ENV === 'production') {

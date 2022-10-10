@@ -28,7 +28,10 @@ const Home =()=>{
       await(dispatch(getproducts(query)))
     }
    const getItemsCart = async()=>{
-    await dispatch(getCartItems({token:auth.token}))
+    if(auth.token){
+      await dispatch(getCartItems({token:auth.token}))
+    }
+    
    }
     getallproduct()
     getItemsCart()

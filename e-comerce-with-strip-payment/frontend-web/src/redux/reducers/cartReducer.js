@@ -1,4 +1,3 @@
-import {GLOBALTYPES} from '../actions/globalTypes'
 import {CART_TYPES} from '../actions/cartAction'
 const initialState = {
   cartItems:null
@@ -11,12 +10,25 @@ const cartReducer = (state = initialState, action)=>{
         return {
           cartItems:action.payload.data
         }
-      
-      case CART_TYPES.GET_CART_ITEM:
+      case CART_TYPES.UPDATE_CART_ITEM:
         return {
-          // ...state,
           cartItems:action.payload.data
         }
+      case CART_TYPES.REMOVE_CART_ITEM:
+        return {
+          cartItems:action.payload.data
+        }
+
+      case CART_TYPES.GET_CART_ITEM:
+        return {
+       
+          cartItems:action.payload.data
+        }
+      case CART_TYPES.CLEAR_CART_ITEM:
+      return {
+        
+        cartItems:action.payload
+      }
     default:
     return state;
 
